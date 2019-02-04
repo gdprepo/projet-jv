@@ -119,3 +119,31 @@ myGrayBtn.addEventListener('click', () => {
     }
     
 })
+
+const hoveredBtn = document.querySelector('#js-hovered-btn');
+hoveredBtn.addEventListener('mouseenter', () => {
+    hoveredBtn.style.backgroundColor = 'red';
+})
+hoveredBtn.addEventListener('mouseleave', () => {
+    hoveredBtn.style.backgroundColor = 'initial';
+})
+
+window.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+    console.log('Mouse right button is clicked');
+})
+
+
+const myForm = document.querySelector('#js-form');
+const myInput = document.querySelector('#js-input');
+
+myInput.addEventListener('keyup', (event) => {
+    console.log('event', event);
+    console.log('input value : ', myInput.value);
+})
+
+myForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (myInput.value)
+        alert(myInput.value);
+})
